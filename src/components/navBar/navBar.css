@@ -1,0 +1,29 @@
+/* @import "~@blueprintjs/core/lib/scss/variables"; */
+ 
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+.bp4-navbar{
+    background-color:#FF8FB1; 
+    color: black;
+}
+.bp4-elevation-4{
+    background-color:#cfb1de; 
+    width: 30%;
+    /* height:300px; */
+    position: relative;
+    float: right; 
+    justify-content: space-between;
+    text-align: center;  
+    margin: 10px 10px 10px 10px;
+}
+
+
+.link{
+    margin: 8px;
+    /* textDecoration: "none"; */
+    color: #3d0b56;
+    font-weight: 600;
+
+  }
