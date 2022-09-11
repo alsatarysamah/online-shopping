@@ -13,7 +13,11 @@ export default function LoginForm(props) {
     console.log(loginContext);
     // console.log("name  ",e.uname.value)
   loginContext.click(true);
+  try{
     loginContext.login(username, password);
+  }catch(e){
+    alert("invalid username or password")
+  }
   };
   const usernameHandler = (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ export default function LoginForm(props) {
                     <div>
                         {loginContext.user.username}
                     </div>
-                    <button onClick={loginContext.logout}>Logout</button>
+                    <button id="loginButton" onClick={loginContext.logout} >Logout</button>
                 </When>
     </>
   );

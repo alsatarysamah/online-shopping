@@ -21,11 +21,11 @@ export default function SignupForm(props) {
     e.preventDefault();
     setPassword(e.target.value);
   };
-  console.log(loginContext.loginClicked);
+
   return (
     <>
-      <When condition={!loginContext.loginClicked}>
-        <div className="f">
+
+        <div className="loginForm">
           <form>
             <div className="input-container">
               <label>Username </label>
@@ -52,7 +52,7 @@ export default function SignupForm(props) {
             </div>
           </form>
         </div>
-        </When>
+        
      
     </>
   );
