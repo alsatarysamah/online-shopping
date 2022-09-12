@@ -30,6 +30,7 @@ export default function Items(props) {
 
   const [item, setItem] = useState([]);
   useEffect(() => {
+    
     const config = {
       headers: { Authorization: `Bearer ${loginContext.user.token}` },
     };
@@ -40,7 +41,7 @@ export default function Items(props) {
           itemContext.settingAllItem(data.data)
         })
         .catch((e) => {});
-  }, []);
+  }, [item]);
   const addFav = async (favitem) => {
     loginContext.user.favItems.push(favitem.id);
 

@@ -26,7 +26,7 @@ function App() {
         <NavBar></NavBar>
        
         <Routes >
-          <Route index path="/online-shopping" element={<Items />} />
+          <Route  path="/online-shopping" element={<Items />} />
           <Route path="/addItem" element={<AddForm />} />
           <Route path="/updateItem" element={<UpdateForm />} />
           

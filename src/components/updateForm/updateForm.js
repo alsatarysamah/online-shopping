@@ -24,7 +24,7 @@ export default function UpdateForm(props) {
     };
     // console.log(loginContext.user);
     
-    updateAPI(item,loginContext.user.token,itemContext.item,isNaN(item.price));
+    updateAPI(item,loginContext.user.token,itemContext.item,isNaN(parseFloat(item.price)));
     e.target.reset();
     e.target.name.focus();
   };
@@ -33,7 +33,9 @@ export default function UpdateForm(props) {
       <div>
         <h4>Create an Item</h4>
         <form id="update" className="loginForm" onSubmit={updateItem}>
+          <h3>Update Form</h3>
           <div className="input-container">
+            
             <label>
               Item name:
               </label>
