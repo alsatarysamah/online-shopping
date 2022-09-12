@@ -5,7 +5,7 @@ export default function postAPI(id, token) {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  Axios.delete(`http://localhost:3800/item/${id}`, config)
+  Axios.delete(`https://samah-shopping-server.herokuapp.com/item/${id}`, config)
     .then((data) => {
       console.log({ data });
     })

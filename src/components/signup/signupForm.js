@@ -11,7 +11,8 @@ export default function SignupForm(props) {
   /////////submit/////////////////
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(username,password)
+    signup(username,password);
+    e.target.reset();
   };
   const usernameHandler = (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ export default function SignupForm(props) {
     <>
 
         <div className="loginForm">
-          <form>
+          <form onSubmit={handleSubmit} >
             <div className="input-container">
               <label>Username </label>
               <input
@@ -48,7 +49,7 @@ export default function SignupForm(props) {
               {/* {renderErrorMessage("pass")} */}
             </div>
             <div className="button-container">
-              <button type="submit" onClick={handleSubmit} >Signup</button>
+              <button type="submit" >Signup</button>
             </div>
           </form>
         </div>

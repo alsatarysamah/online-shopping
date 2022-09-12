@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://img.freepik.com/premium-photo/hand-holding-shopping-bags-plain-background_23-2148286215.jpg?w=2000");
+  background-position: center;
+  background-size: cover;
+  background-repeat: 'no-repeat';
+  width: 100vw;
+  height: 100vh;
 }
 
 code {
