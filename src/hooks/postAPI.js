@@ -16,6 +16,6 @@ console.log({item});
         "https://samah-shopping-server.herokuapp.com/item",
       item,
       config
-    ).then((data)=>{console.log({data});}).catch((e)=>{console.log(e);});
+    ).then((data)=>{alert("Item is Added")}).catch((e)=>{console.log(e);});
 
 }
