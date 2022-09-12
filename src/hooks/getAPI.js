@@ -5,7 +5,7 @@ export default function getAPI(token) {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  Axios.get("http://localhost:3800/item", config)
+  Axios.get("https://samah-shopping-server.herokuapp.com/item", config)
     .then((data) => {
     //   console.log(data.data);
       return data.data;

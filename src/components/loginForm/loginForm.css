@@ -46,13 +46,19 @@ input[type="submit"]:hover {
   font-size: 15px;
   margin-left: 10px;
   align-items:flex-start;
-  /* padding: 15px 10px 0 0; */
   text-align: center;
   padding: 20px;
+  font-size: 20px;
   justify-content: space-between;
-  /* display: inline-block; */
   margin-top: 100px;
   float: left;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(216, 75, 75, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 50%;
+  left: 50%;
+  margin-left: 70px;
+}
+#loginButton{
+  background-color:rgba(0, 0, 0, 0.2);
+  color: rgb(255, 255, 255);
 }

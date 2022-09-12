@@ -33,6 +33,7 @@ export default function NavBarToDo() {
             
           </When>
           <When condition={loginContext.loggedIn && loginContext.loginClicked}>
+          {/* <Link to={`/fav`}  className="link">Fav Item</Link> */}
           <Link to={`/addItem`}  className="link">Add Item</Link>
             <button
               class="bp4-button bp4-minimal "

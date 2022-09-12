@@ -13,7 +13,7 @@ console.log({item});
     };
     
     Axios.post( 
-        "http://localhost:3800/item",
+        "https://samah-shopping-server.herokuapp.com/item",
       item,
       config
     ).then((data)=>{console.log({data});}).catch((e)=>{console.log(e);});

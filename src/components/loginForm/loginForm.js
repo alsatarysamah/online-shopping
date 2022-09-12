@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import "./loginForm.css";
 import { LoginContext } from "../../context/login";
 import { When } from "react-if";
-
+import {ItemContext} from "../../context/item"
+import Axios from "axios";
 export default function LoginForm(props) {
   const loginContext = useContext(LoginContext);
+  const itemContext=useContext(ItemContext)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState();
   /////////submit/////////////////
@@ -28,7 +30,21 @@ export default function LoginForm(props) {
     setPassword(e.target.value);
   };
   
-  // useEffect(()=>{console.log("effect",loginContext.loginClicked);},[])
+  // useEffect(()=>{
+  //   console.log("effect",loginContext.loggedIn);
+  //   if(loginContext.loggedIn)
+  //   {const config = {
+  //     headers: { Authorization: `Bearer ${loginContext.user.token}` },
+  //   };
+  //   if (loginContext?.user?.token)
+  //     Axios.get("http://localhost:3800/item", config)
+  //       .then((data) => {
+  //         console.log(data.data);
+  //         itemContext.settingAllItem(data.data)
+        
+  //       })
+  //       .catch((e) => {});}
+  // },[])
   return (
     <>
       <When condition={!loginContext.loggedIn&&loginContext.loginClicked}>
@@ -56,7 +72,7 @@ export default function LoginForm(props) {
             </div>
             <div className="button-container">
               {/* <input type="submit" onClick={handleSubmit} /> */}
-              <button type="submit" onClick={handleSubmit} >Signin</button>
+              <button id="loginButton" type="submit" onClick={handleSubmit} >Signin</button>
             </div>
           </form>
         </div>
@@ -65,7 +81,7 @@ export default function LoginForm(props) {
                     <div>
                         {loginContext.user.username}
                     </div>
-                    <button id="loginButton" onClick={loginContext.logout} >Logout</button>
+                    <button  onClick={loginContext.logout} >Logout</button>
                 </When>
     </>
   );

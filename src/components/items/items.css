@@ -1,7 +1,13 @@
-
+.grid{
+  display: grid;
+column-gap: 50px;
+flex-direction: row-reverse;
+color: azure;
+gap: 2px;
+}
 
 .item{
-    display:grid;
+  display: grid ;
     position: relative;
     flex: 1 1 20%;
     height: 400px;
@@ -12,11 +18,20 @@
     margin-top: 100px;
     margin-bottom: 10px;
     background-color: blanchedalmond;
+    
 }
 img{
     height: 120px;
 }
-#grid{
-    display: grid;
-  column-gap: 50px;
-}
+
+.popup-content {
+    margin: auto;
+    background: #FCE2DB;
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+   
+  }
+  .popup-arrow {
+    color:#FCE2DB;
+  }

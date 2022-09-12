@@ -10,48 +10,35 @@ import Items from "./components/items/items";
 // import Items from "./components/items/items";
 import AddForm from "./components/addForm/addForm";
 import UpdateForm from "./components/updateForm/updateForm";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Axios from "axios";
 import Details from "./components/details/details";
 import Item from "./context/item";
-// import I from "./context/details"
+import Fav from "./components/fav/fav"
+
 function App() {
   
-  // const loginContext = useContext(LoginContext);
-  // useEffect(() => {
-  //   const config = {
-  //     headers: { Authorization: `Bearer ${loginContext.user.token}` },
-  //   };
-  //   if (loginContext?.user?.token)
-  //     Axios.get("http://localhost:3800/item", config)
-  //       .then((data) => {
-  //         setItem(data.data);
-  //       })
-  //       .catch((e) => {
-  //         console.log(e);
-  //       });
-  // }, []);
   return (
-    <>
+    <div id="app">
       <Login>
         <Item>
-        {/* <I> */}
+       
         <NavBar></NavBar>
        
-        <Routes>
-          <Route path="/online-shopping" element={<Items />} />
+        <Routes >
+          <Route index path="/online-shopping" element={<Items />} />
           <Route path="/addItem" element={<AddForm />} />
           <Route path="/updateItem" element={<UpdateForm />} />
           
           <Route path="/details" element={<Details />} />
-
+          <Route path="/fav" element={<Fav />} />
         </Routes>
-        {/* </I> */}
+        
         </Item>
       </Login>
         <Footer></Footer>
        
-    </>
+    </div>
   );
 }
 
