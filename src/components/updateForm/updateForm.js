@@ -1,28 +1,28 @@
-import "./addForm.css";
+
 import postAPI from "../../hooks/postAPI";
 import { LoginContext } from "../../context/login";
 import { useContext } from "react";
-import "./addForm.css"
-export default function AddForm(props) {
+export default function UpdateForm(props) {
     const loginContext=useContext(LoginContext);
-  const addItem = (e) => {
+  const updateItem = (e,id) => {
     console.log("user  ",loginContext.user);
     // postAPI(item,loginContext.user.token);
     console.log("submit");
     e.preventDefault();
-    let name = e.target.name.value;
+    // let name;
+    // if(e.target.name.value) name = e.target.name.value;
     let description = e.target.description.value;
     let price = parseFloat(e.target.price.value);
     let url = e.target.url.value;
     let item = {
-      name: name,
+    
       description: description,
       price: price,
       imgUrl: url,
       userId:loginContext.user.id
     };
     // console.log(loginContext.user);
-    postAPI(item,loginContext.user.token);
+    // updateAPI(item,loginContext.user.token,id);
     e.target.reset();
     e.target.name.focus();
   };
@@ -30,11 +30,12 @@ export default function AddForm(props) {
     <>
       <div>
         <h4>Create an Item</h4>
-        <form onSubmit={addItem} className="loginForm" id="add">
+        <form onSubmit={updateItem}>
           <div className="input-container">
             <label>
               Item name:
-                 </label>
+              https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt2.jpg?raw=true{" "}
+            </label>
             <input type="text" name="name" required />
             {/* {renderErrorMessage("uname")} */}
           </div>
@@ -55,8 +56,8 @@ export default function AddForm(props) {
           </div>
           <div className="button-container">
             {/* <input type="submit" onClick={handleSubmit} /> */}
-            <button type="submit"  >
-              Add
+            <button type="submit" >
+              Update
             </button>
           </div>
         </form>

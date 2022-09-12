@@ -8,7 +8,7 @@ export default function NavBarToDo() {
 
   return (
     <>
-      <nav class="bp4-navbar .modifier">
+      <nav class="bp4-navbar .modifier " id="nav">
         <div class="bp4-navbar-group bp4-align-left">
           {/* <div class="bp4-navbar-heading" className="link" >
             Mr Shop

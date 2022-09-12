@@ -8,32 +8,35 @@ export const LoginContext=React.createContext();
 export default function Login(props){
 const [loggedIn,setLoggedIn]=useState(false);
 const [loginClicked,setloginClicked]=useState(false);
-const[user,setUser]=useState({});
-const can =(action)=>{
-return user?.actions?.includes(action)
+const [user, setUser] = useState({
+    username: cookie.load('username') || "",
+    actions: cookie.load('actions') || []
+});
+const can =(userId)=>{
+return user.id===userId;
 }
 const login =async (username,password)=>{
+    try{
 const response= await superAgent.post("http://localhost:3800/signin").set('authorization',
  `Basic ${base64.encode(`${username}:${password}`)}`);
  console.log(response.body) 
   validateMyUser(response.body.user)
+    }catch {
+        alert("invalid username or password")
+    }
 }
 const validateMyUser = (user) => {
-    // console.log("user validta",user.user.token);
     if (user.token) {
-        const userFromToken = jwt.decode(user.token);
-        console.log('username >>>> ', userFromToken);
         setLoggedIn(true);
         setUser(user);
         cookie.save('token', user.token);
         cookie.save('username', user.username);
-
-        // const actionsCookie = JSON.stringify(user.actions);
         cookie.save('actions', user.actions);
         console.log({loggedIn});
     } else {
         setLoggedIn(false);
         setUser({});
+        alert("invalid username or password")
     }
 }
 const logout =()=>{
